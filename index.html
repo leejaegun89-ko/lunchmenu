@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunch Menu Recommender</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>What's for Lunch?</h1>
+        </header>
+
+        <div class="preferences-section">
+            <h2>Your Preferences</h2>
+            <div class="selection-container">
+                <div class="selection-box mood-box">
+                    <h3>How do you feel today?</h3>
+                    <div class="options mood-options">
+                        <button data-mood="happy" class="preference-button">😊 Happy</button>
+                        <button data-mood="stressed" class="preference-button">😫 Stressed</button>
+                        <button data-mood="tired" class="preference-button">😴 Tired</button>
+                        <button data-mood="hungry" class="preference-button">🤤 Very Hungry</button>
+                    </div>
+                </div>
+
+                <div class="selection-box weather-box">
+                    <h3>What's the weather like?</h3>
+                    <div class="options weather-options">
+                        <button data-weather="sunny" class="preference-button">☀️ Sunny</button>
+                        <button data-weather="rainy" class="preference-button">🌧️ Rainy</button>
+                        <button data-weather="cold" class="preference-button">❄️ Cold</button>
+                        <button data-weather="hot" class="preference-button">🔥 Hot</button>
+                    </div>
+                </div>
+
+                <div class="selection-box time-box">
+                    <h3>How much time do you have?</h3>
+                    <div class="options time-options">
+                        <button data-time="quick" class="preference-button">⚡ In a hurry (15min)</button>
+                        <button data-time="moderate" class="preference-button">⏰ Regular break (30min)</button>
+                        <button data-time="relaxed" class="preference-button">🍽️ Taking it easy (1hr)</button>
+                        <button data-time="desk" class="preference-button">💻 Desk lunch</button>
+                    </div>
+                </div>
+            </div>
+
+            <button id="findLunchBtn" class="find-lunch-btn" disabled>Find My Lunch!</button>
+        </div>
+
+        <div id="resultContainer" class="result-container hidden">
+            <div class="result-card">
+                <button class="back-button">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M19 12H5M5 12L12 19M5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="food-image-container">
+                    <img id="foodImage" src="" alt="Food recommendation">
+                </div>
+                <div class="food-details">
+                    <h2 id="foodName"></h2>
+                    <div id="foodDescription" class="food-description"></div>
+                    <div class="food-meta">
+                        <span id="foodCalories" class="food-calories"></span>
+                        <button class="favorite-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <button id="tryAgainBtn" class="try-again-btn">Try Different Options</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
